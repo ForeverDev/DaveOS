@@ -29,7 +29,7 @@ void clearScreen(void) {
 
 void putchar(s8 c) {
 	VIDMEM[SCRPOINT(cursorX, cursorY) * SCREEN_DEPTH] = c;
-	VIDMEM[SCRPOINT(cursorX, cursorY) * SCREEN_DEPTH + 1] = 0x0f;
+	VIDMEM[SCRPOINT(cursorX, cursorY) * SCREEN_DEPTH + 1] = c ? 0x5f : 0x00;
 }
 
 void printch(s8 c) {
